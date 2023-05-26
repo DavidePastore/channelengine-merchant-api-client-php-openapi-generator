@@ -23,7 +23,7 @@ jobs:
         with:
           generator: php
           openapi-url: https://demo.channelengine.net/api/swagger/merchant/swagger.json
-          config-file: swagger-config.yml
+          config-file: /swagger-config.yml
 
       # Do something with the generated client (likely publishing it somewhere)
       - name: Do something with the client
