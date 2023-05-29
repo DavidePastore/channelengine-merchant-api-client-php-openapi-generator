@@ -38,7 +38,7 @@ jobs:
       # Do something with the generated client (likely publishing it somewhere)
       - name: Do something with the client
         run: |
-          echo "The version is ${{ steps.set-version.outputs.version }}"
+          echo "The version is ${{ steps.set-version.outputs.packageVersion }}"
           ls
           cd php-client
           ls
