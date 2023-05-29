@@ -43,5 +43,12 @@ jobs:
           ls
           git config --global user.name 'Davide Pastore'
           git config --global user.email 'davidepastore@users.noreply.github.com'
+          git add --all
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "there are changes";
+          else
+            echo "no changes";
+          fi
+          git status
           git commit -am "Create ${{ steps.set-version.outputs.packageVersion }} version"
           #git push
