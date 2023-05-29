@@ -15,10 +15,12 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Get the version
+        id: set-version
         run: |
           wget -O swagger.json "https://demo.channelengine.net/api/swagger/merchant/swagger.json"
           version=$(cat swagger.json | jq '.info.version')
           echo "The version is ${version}"
+          echo "{packageVersion}={$version}" >> $GITHUB_OUTPUT
 
 
 
@@ -36,6 +38,7 @@ jobs:
       # Do something with the generated client (likely publishing it somewhere)
       - name: Do something with the client
         run: |
+          echo ${{ steps.set-version.outputs.version }}"
           ls
           cd php-client
           ls
