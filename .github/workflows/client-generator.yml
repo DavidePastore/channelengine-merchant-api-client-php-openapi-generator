@@ -33,4 +33,5 @@ jobs:
         run: |
           cd php-client
           ls
+          cat composer.json
       
