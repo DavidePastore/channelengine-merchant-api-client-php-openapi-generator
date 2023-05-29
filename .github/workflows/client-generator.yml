@@ -17,13 +17,8 @@ jobs:
       - name: Get the version
         run: |
           wget -O swagger.json "https://demo.channelengine.net/api/swagger/merchant/swagger.json"
-          content=`cat ./swagger.json`
-          # the following lines are only required for multi line json
-          content="${content//'%'/'%25'}"
-          content="${content//$'\n'/'%0A'}"
-          content="${content//$'\r'/'%0D'}"
-          # end of optional handling for multi line json
-          jq --version
+          version=$(cat swagger.json | jq '.info.version')
+          echo "The version is ${version}"
 
 
 
