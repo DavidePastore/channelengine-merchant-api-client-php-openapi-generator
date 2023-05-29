@@ -32,7 +32,7 @@ jobs:
         with:
           generator: php
           openapi-url: "https://demo.channelengine.net/api/swagger/merchant/swagger.json"
-          config-file: /config.json
+          config-file: config.json
           command-args: --artifact-version=${{ steps.set-version.outputs.packageVersion }}
 
       # Do something with the generated client (likely publishing it somewhere)
