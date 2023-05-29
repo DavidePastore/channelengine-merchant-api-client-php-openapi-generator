@@ -8,8 +8,8 @@
     "invokerPackage": "ChannelEngine\\Merchant\\ApiClient",
     "packagePath": "",
     "composerVendorName": "davidepastore",
-    "gitUserId": "channelengine",
-    "composerProjectName": "merchant-api-client-php",
-    "gitRepoId": "merchant-api-client-php",
+    "gitUserId": "davidepastore",
+    "composerProjectName": "channelengine-merchant-api-client-php",
+    "gitRepoId": "channelengine-merchant-api-client-php",
     "hideGenerationTimestamp": true
 }
