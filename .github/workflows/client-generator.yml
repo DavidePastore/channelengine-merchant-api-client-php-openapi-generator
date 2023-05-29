@@ -23,7 +23,6 @@ jobs:
           echo "packageVersion=${version}" >> $GITHUB_OUTPUT
 
 
-
       # Generate your OpenAPI document (if you don't write it manually)
 
       # Use the action to generate a client package
@@ -33,7 +32,7 @@ jobs:
         with:
           generator: php
           openapi-url: "https://demo.channelengine.net/api/swagger/merchant/swagger.json"
-          #config-file: /swagger-config.json
+          config-file: /config.json
           command-args: --artifact-version=${{ steps.set-version.outputs.packageVersion }}
 
       # Do something with the generated client (likely publishing it somewhere)
@@ -45,10 +44,10 @@ jobs:
           git config --global user.email 'davidepastore@users.noreply.github.com'
           git add --all
           if [ -n "$(git status --porcelain)" ]; then
-            echo "there are changes";
+            echo "There are changes";
             git commit -am "Create ${{ steps.set-version.outputs.packageVersion }} version"
             git tag ${{ steps.set-version.outputs.packageVersion }}
             #git push
           else
-            echo "no changes";
+            echo "No changes";
           fi
