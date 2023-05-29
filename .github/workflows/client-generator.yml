@@ -20,7 +20,7 @@ jobs:
           wget -O swagger.json "https://demo.channelengine.net/api/swagger/merchant/swagger.json"
           version=$(cat swagger.json | jq '.info.version')
           echo "The version is ${version}"
-          echo "{packageVersion}={$version}" >> $GITHUB_OUTPUT
+          echo "{packageVersion}=${version}" >> $GITHUB_OUTPUT
 
 
 
