@@ -46,9 +46,9 @@ jobs:
           git add --all
           if [ -n "$(git status --porcelain)" ]; then
             echo "there are changes";
+            git commit -am "Create ${{ steps.set-version.outputs.packageVersion }} version"
+            git tag ${{ steps.set-version.outputs.packageVersion }}
+            #git push
           else
             echo "no changes";
           fi
-          git status
-          git commit -am "Create ${{ steps.set-version.outputs.packageVersion }} version"
-          #git push
