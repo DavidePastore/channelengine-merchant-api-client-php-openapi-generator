@@ -37,10 +37,11 @@ jobs:
           command-args: --artifact-version=${{ steps.set-version.outputs.packageVersion }}
 
       # Do something with the generated client (likely publishing it somewhere)
-      - name: Do something with the client
+      - name: Publish
         run: |
-          ls
           cd php-client
           ls
-          cat composer.json
-      
+          git config --global user.name 'Davide Pastore'
+          git config --global user.email 'davidepastore@users.noreply.github.com'
+          git commit -am "Create ${{ steps.set-version.outputs.packageVersion }} version"
+          #git push
