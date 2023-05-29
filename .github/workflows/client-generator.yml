@@ -25,8 +25,8 @@ jobs:
         uses: openapi-generators/openapitools-generator-action@v1
         with:
           generator: php
-          openapi-url: https://demo.channelengine.net/api/swagger/merchant/swagger.json
-          config-file: /not-found-file-swagger-config.yml
+          openapi-url: "https://demo.channelengine.net/api/swagger/merchant/swagger.json"
+          config-file: /swagger-config.yml
 
       # Do something with the generated client (likely publishing it somewhere)
       - name: Do something with the client
