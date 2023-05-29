@@ -39,11 +39,11 @@ jobs:
       - name: Publish
         run: |
           cd php-client
-          ls
           git config --global user.name 'Davide Pastore'
           git config --global user.email 'davidepastore@users.noreply.github.com'
           if [ -n "$(git status --porcelain)" ]; then
             echo "There are changes";
+            git add .
             git commit -am "Generate ${{ steps.set-version.outputs.packageVersion }} version"
             git tag -a "v${{ steps.set-version.outputs.packageVersion }}" -m "Version ${{ steps.set-version.outputs.packageVersion }}"
             # git push origin master --tags
